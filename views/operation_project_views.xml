@@ -1,0 +1,67 @@
+<odoo>
+    <!-- Project Form View -->
+    <record id="view_operation_project_form" model="ir.ui.view">
+        <field name="name">operation.project.form</field>
+        <field name="model">operation.project</field>
+        <field name="arch" type="xml">
+            <form string="Project">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="client_id"/>
+                        <field name="contract_start_date"/>
+                        <field name="contract_end_date"/>
+                        <field name="modality"/>
+                        <field name="manpower_count"/>
+                        <field name="renewal_date"/>
+                        <field name="region"/>
+            
+                        <field name="admin_cost"/>
+                        <field name="fixed_rate_cost"/>
+                        <field name="profit_margin_percentage"/>
+                        <field name="service_type"/>
+                        <field name="agreement_document"/>
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Project Tree View -->
+    <record id="view_operation_project_tree" model="ir.ui.view">
+        <field name="name">operation.project.tree</field>
+        <field name="model">operation.project</field>
+        <field name="arch" type="xml">
+            <tree string="Projects">
+                <field name="name"/>
+                <field name="client_id"/>
+                <field name="contract_start_date"/>
+                <field name="contract_end_date"/>
+                <field name="modality"/>
+                <field name="manpower_count"/>
+                <field name="region"/>
+                <field name="location_id"/>
+                <field name="service_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Project Action -->
+    <record id="action_operation_project" model="ir.actions.act_window">
+        <field name="name">Projects</field>
+        <field name="res_model">operation.project</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Create and manage project details.
+            </p>
+        </field>
+    </record>
+
+    <!-- Project Menuitem -->
+    <menuitem id="menu_operation_root" name="Operations" sequence="1"/>
+
+    <menuitem id="menu_operation_project" name="Projects" parent="menu_operation_root"
+              action="action_operation_project" sequence="2"/>
+</odoo>

@@ -1,0 +1,46 @@
+<odoo>
+    <!-- Position Form View -->
+    <record id="view_operation_position_form" model="ir.ui.view">
+        <field name="name">operation.position.form</field>
+        <field name="model">operation.position</field>
+        <field name="arch" type="xml">
+            <form string="Position">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="location_id"/>
+                        <!-- Remove or comment out the following line if it does not exist in the model -->
+                        <!-- <field name="employee_ids"/> -->
+                        <field name="employee_rate"/>
+                        <field name="edomias_rate"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Position Tree View -->
+    <record id="view_operation_position_tree" model="ir.ui.view">
+        <field name="name">operation.position.tree</field>
+        <field name="model">operation.position</field>
+        <field name="arch" type="xml">
+            <tree string="Positions">
+                <field name="name"/>
+                <field name="location_id"/>
+                <field name="employee_rate"/>
+                <field name="edomias_rate"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Position Action -->
+    <record id="action_operation_position" model="ir.actions.act_window">
+        <field name="name">Positions</field>
+        <field name="res_model">operation.position</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Position Menuitem -->
+    <menuitem id="menu_operation_position" name="Positions" parent="menu_operation_project"
+              action="action_operation_position" sequence="4"/>
+</odoo>

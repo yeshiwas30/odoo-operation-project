@@ -1,0 +1,51 @@
+<odoo>
+    <!-- Location Form View -->
+    <record id="view_operation_location_form" model="ir.ui.view">
+        <field name="name">operation.location.form</field>
+        <field name="model">operation.location</field>
+        <field name="arch" type="xml">
+            <form string="Location">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="branch_type"/>
+                        <field name="position_ids"/> <!-- Updated Position Field -->
+                        <!-- New Edomias Rate Field -->
+                    </group>
+                    <notebook>
+                        <page string="Projects">
+                            <field name="project_ids"/>
+                        </page>
+                       
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Location Tree View -->
+    <record id="view_operation_location_tree" model="ir.ui.view">
+        <field name="name">operation.location.tree</field>
+        <field name="model">operation.location</field>
+        <field name="arch" type="xml">
+            <tree string="Locations">
+                <field name="name"/>
+                <field name="branch_type"/>
+                <field name="additional_allowance"/> <!-- Include in Tree View if needed -->
+                <field name="employee_rate"/> <!-- Include in Tree View if needed -->
+                <field name="edomias_rate"/> <!-- Include in Tree View if needed -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- Location Action -->
+    <record id="action_operation_location" model="ir.actions.act_window">
+        <field name="name">Locations</field>
+        <field name="res_model">operation.location</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Location Menuitem -->
+    <menuitem id="menu_operation_location" name="Locations" parent="menu_operation_project"
+              action="action_operation_location" sequence="3"/>
+</odoo>

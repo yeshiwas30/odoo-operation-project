@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_operation_project,access_operation_project,model_operation_project,,1,1,1,1
+access_operation_location,access_operation_location,model_operation_location,,1,1,1,1
+access_operation_position,access_operation_position,model_operation_position,,1,1,1,1
+access_operation_employee_rate,access_operation_employee_rate,model_operation_employee_rate,,1,1,1,1
+access_operation_edomias_rate,access_operation_edomias_rate,model_operation_edomias_rate,,1,1,1,1
+access_operation_tax_center,access_operation_tax_center,model_operation_tax_center,,1,1,1,1
+access_hr_employee,access_hr_employee,model_hr_employee,,1,1,1,1
